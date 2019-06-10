@@ -5,6 +5,7 @@ const Constants = {
     },
     models: {
       UserModel: 'USER_MODEL',
+      GameModel: 'GAME_MODEL',
     },
   },
 };

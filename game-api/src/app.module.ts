@@ -3,9 +3,10 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 
 import { UsersModule } from './users/users.module';
+import { GamesModule } from './game/games.module';
 
 @Module({
-  imports: [UsersModule],
+  imports: [UsersModule, GamesModule],
   controllers: [AppController],
   providers: [AppService],
 })

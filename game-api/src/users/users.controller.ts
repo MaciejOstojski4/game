@@ -13,7 +13,7 @@ export class UsersController {
     return this.usersService.findAll();
   }
 
-  @Post()
+  @Post('/new')
   async create(@Body() user: CreateUserDto): Promise<User> {
     const dbUser = await this.usersService.create(user);
     return dbUser;
