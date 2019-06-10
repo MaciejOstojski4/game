@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { RouteComponentProps } from 'react-router-dom';
+import openSocket from 'socket.io-client';
 
 import { Button } from '../../../styles/elements';
 import api from '../../../lib/api';
@@ -10,10 +11,15 @@ export const Container = (props: RouteComponentProps) => {
   const [games, setGames] = useState([] as Game[]);
 
   useEffect(() => {
+    const socket = openSocket('http://localhost:80/games');
+
+    socket.on('created', (data: any) => {
+      setGames(convertRemoteGames(data.games as RemoteGame[]));
+    });
+
     api
       .get('/games')
       .then(response => {
-        console.log(response);
         setGames(convertRemoteGames(response.data as RemoteGame[]));
       })
       .catch(err => {

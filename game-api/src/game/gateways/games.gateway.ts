@@ -23,9 +23,9 @@ export class GamesGateway {
 
   @SubscribeMessage('create')
   async handleCreateEvent(client: Client, data: CreateGameDto): Promise<void> {
-    console.log('data: ', data);
-    const game = await this.gamesService.create(data);
-    this.server.emit('created', { game: game, user: data.userId });
+    await this.gamesService.create(data);
+    const games = await this.gamesService.getAll();
+    this.server.emit('created', { games: games });
   }
 
   @SubscribeMessage('join')
