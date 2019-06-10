@@ -10,7 +10,6 @@ export class GamesController {
 
   @Get('/')
   async index(): Promise<Game[]> {
-    const response = await this.gamesService.getAll();
     return await this.gamesService.getAll();
   }
 
