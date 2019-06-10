@@ -7,7 +7,7 @@ export const List = (props: Props) => {
     <ul>
       {props.games.map(game => {
         return (
-          <li>
+          <li key={game.id}>
             <div>{game.roomId}</div>
             <button onClick={() => props.onClick(game.id)}>Dołącz</button>
           </li>
