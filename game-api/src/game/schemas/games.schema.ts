@@ -1,7 +1,5 @@
 import * as mongoose from 'mongoose';
 
-import Constants from '../../constants';
-
 export const GamesSchema = new mongoose.Schema(
   {
     result: Number,
