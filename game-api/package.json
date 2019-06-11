@@ -28,7 +28,6 @@
     "@nestjs/websockets": "^6.2.4",
     "class-transformer": "^0.2.3",
     "class-validator": "^0.9.1",
-    "mongo-seeding": "^3.2.0-alpha.0",
     "mongoose": "^5.5.12",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^2.6.2",
