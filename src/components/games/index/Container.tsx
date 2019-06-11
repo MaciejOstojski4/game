@@ -20,7 +20,7 @@ export const Container = (props: RouteComponentProps) => {
     api
       .get('/games')
       .then(response => {
-        setGames(convertRemoteGames(response.data as RemoteGame[]));
+         setGames(convertRemoteGames(response.data as RemoteGame[]));
       })
       .catch(err => {
         console.log(err);
