@@ -5,11 +5,9 @@ import { CardsSchema, CardCategorySchema } from './schema/cards.schema';
 
 export const cardsProviders = [
   {
-    provide: Constants.database.models.GameModel,
-    useFactory: (connection: Connection) => {
-      connection.model('Card', CardsSchema);
-      connection.model('CardCategory', CardCategorySchema);
-    },
+    provide: Constants.database.models.CardModel,
+    useFactory: (connection: Connection) =>
+      connection.model('Card', CardsSchema),
     inject: [Constants.database.config.DatabaseConnection],
   },
 ];

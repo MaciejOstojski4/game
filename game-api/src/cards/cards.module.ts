@@ -9,5 +9,6 @@ import { CardsService } from './cards.service';
   imports: [DatabaseModule],
   controllers: [CardsController],
   providers: [CardsService, ...cardsProviders],
+  exports: [CardsService],
 })
 export class CardsModule {}
