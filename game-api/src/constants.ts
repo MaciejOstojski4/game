@@ -6,6 +6,8 @@ const Constants = {
     models: {
       UserModel: 'USER_MODEL',
       GameModel: 'GAME_MODEL',
+      CardModel: 'CARD_MODEL',
+      CardCategoryModel: 'CARD_CATEGORY_MODEL',
     },
   },
 };
